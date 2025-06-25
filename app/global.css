@@ -33,6 +33,17 @@ html {
   min-width: 360px;
 }
 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: monospace;
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
