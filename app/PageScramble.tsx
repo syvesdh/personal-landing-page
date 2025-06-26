@@ -130,25 +130,23 @@ export function PageScramble({ children }: { children: React.ReactNode }) {
   const [isScrambling, setIsScrambling] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    // Start scrambling on route change
-    setIsScrambling(true);
+  // useEffect(() => {
+  //   // Start scrambling on route change
+  //   setIsScrambling(true);
+  //   // Stop scrambling after 0.5 seconds
+  //   const timer = setTimeout(() => {
+  //     setIsScrambling(false);
+  //   }, 500);
 
-    // Stop scrambling after 0.5 seconds
-    const timer = setTimeout(() => {
-      setIsScrambling(false);
-    }, 500);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [pathname]);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [pathname]);
 
   // Also trigger scrambling on initial mount
   useEffect(() => {
     // Start scrambling on initial load
     setIsScrambling(true);
-
     // Stop scrambling after 0.5 seconds
     const timer = setTimeout(() => {
       setIsScrambling(false);

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { PageScramble } from "../PageScramble";
+import { PageScramble } from "app/PageScramble";
 
 const navItems = {
   "/": {

@@ -12,11 +12,18 @@ import { PageScramble } from "./PageScramble";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
+    //for page title in the browser tab
     default: "Next.js Portfolio Starter",
     template: "%s | Next.js Portfolio Starter",
   },
   description: "This is my portfolio.",
+  // It's a short summary of your page's content that search engines
+  // like Google often show in their search results under your page title.
   openGraph: {
+    //This block is for the Open Graph protocol,
+    //which is used by social media platforms like Facebook,
+    //Twitter, and LinkedIn to display rich previews of your
+    //website when someone shares a link.
     title: "My Portfolio",
     description: "This is my portfolio.",
     url: baseUrl,
