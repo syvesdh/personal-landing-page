@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/blog/utils";
 import { baseUrl } from "app/sitemap";
-import { serialize } from "next-mdx-remote/serialize";
 import { PageScramble } from "app/PageScramble";
+import { BlogPostMDX } from "app/components/mdx";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -62,9 +62,6 @@ export default async function Blog({ params }) {
     notFound();
   }
 
-  // Serialize the MDX content
-  const mdxSource = await serialize(post.content);
-
   return (
     <section>
       <PageScramble>
@@ -99,7 +96,7 @@ export default async function Blog({ params }) {
           </p>
         </div>
         <article className="prose">
-          <CustomMDX {...mdxSource} />
+          <BlogPostMDX source={post.content} />
         </article>
       </PageScramble>
     </section>

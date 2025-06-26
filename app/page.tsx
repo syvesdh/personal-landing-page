@@ -1,5 +1,8 @@
 import { BlogPosts } from "app/components/posts";
 import { PageScramble } from "./PageScramble";
+import { projects } from "app/data/projects";
+import { ProjectCard } from "app/components/ProjectCard";
+import styles from "./components/ProjectCard.module.css";
 
 export default function Page() {
   return (
@@ -15,12 +18,20 @@ export default function Page() {
           early error detection ensures cleaner code, and my preference for dark
           mode, which eases long coding sessions by reducing eye strain.`}
         </p>
-      </PageScramble>
-      <div className="my-8">
-        <PageScramble>
+
+        <div className="my-8">
           <BlogPosts />
-        </PageScramble>
-      </div>
+        </div>
+
+        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+          My Projects
+        </h1>
+        <div className={styles.masonry}>
+          {projects.map((project) => (
+            <ProjectCard key={project.name} project={project} />
+          ))}
+        </div>
+      </PageScramble>
     </section>
   );
 }
