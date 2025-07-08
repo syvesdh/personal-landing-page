@@ -80,7 +80,7 @@ export function Navbar() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
+    <aside className="mr-16 mb-4 tracking-tight flex justify-end">
       <div className="lg:sticky lg:top-20">
         <nav
           className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
@@ -90,7 +90,7 @@ export function Navbar() {
             {Object.entries(navItems).map(([path, { name }]) => {
               const isHovered = hoveredLink === path;
               return (
-                <PageScramble>
+                <PageScramble key={path}>
                   <Link
                     key={path}
                     href={path}
